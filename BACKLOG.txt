@@ -1,0 +1,20 @@
+Le but de ce projet est de créer un site de location/pret de livres avec comme features :
+
+- authentification, pour deux types de profils : libraire et client
+- groupes de lecture, avec plannification de séances (doodle like)
+- gestion des livres (titre, auteur, jaquette, editeur, collection, genre)
+- recherche de livre et de libraire le proposant
+- sélection de libraires par zone géographique,
+- création/planification des groupes de lectures et adhésion
+- backoffice pour les libraires :
+- - ajout de livres
+- - interface de gestion des emprunts
+- - listing des retards de retour de livres
+- - creation de groupes de lectures
+- page d'accueil des patients :
+- - rappel des prochains groupes de lectures
+- - rappel des livres à rendre
+- chat/forum
+
+Le site doit être fait avec du Django simple (pas d'API REST, pas de front avec framework type react ou
+angular), ignorer cette contrainte conduira à un zero automatiquement.
