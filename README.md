@@ -14,8 +14,9 @@ Si ça ne fonctionne pas : [Installation](https://python-poetry.org/docs/)
 
 ## Mise en place du projet
 
-1 - installer les dependances : `$ poetry install`  
-2 - activer l'environnement : `$ source .venv/bin/activate`  
+1 - configurer poetry : `$ poetry config virtualenvs.in-project true`  
+2 - installer les dependances : `$ poetry install`  
+3 - activer l'environnement : `$ source .venv/bin/activate`  
 
 ## Django manager
 
