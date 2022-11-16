@@ -24,6 +24,11 @@ Si ça ne fonctionne pas : [Installation](https://python-poetry.org/docs/)
 Pour utiliser le manager: `$ python3 manage.py <command>`  
 Liste des commandes : `$ python3 manage.py`
 
+Pour créer une entité :  
+1 - Créer le model  
+2 - `$ python3 manage.py makemigrations`
+3 - `$ python3 manage.py migrate`
+
 ## Contributions au projet
 
 [Guide de contribution](https://github.com/adxl/jojo-wango-library/blob/master/CONTRIBUTING.md)

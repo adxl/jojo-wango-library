@@ -32,6 +32,11 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'books.apps.BooksConfig',
+    'reading_groups.apps.ReadingGroupsConfig',
+    'borrows.apps.BorrowsConfig',
+    'forums.apps.ForumsConfig',
+    'libraries.apps.LibrariesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
