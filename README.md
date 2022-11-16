@@ -16,7 +16,8 @@ Si ça ne fonctionne pas : [Installation](https://python-poetry.org/docs/)
 
 1 - configurer poetry : `$ poetry config virtualenvs.in-project true`  
 2 - installer les dependances : `$ poetry install`  
-3 - activer l'environnement : `$ source .venv/bin/activate`  
+3 - lancer la BDD : `docker-compose up -d`
+4 - activer l'environnement : `$ source .venv/bin/activate`  
 
 ## Django manager
 

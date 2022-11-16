@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:13-alpine
+    container_name: jojo_wango_db
+    environment:
+      POSTGRES_DB: jojo_wango_db
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: password
+      TZ: Europe/Paris
+      PGTZ: Europe/Paris
+    volumes:
+      - jojo-wango-data:/var/lib/postgresql/data:rw
+    ports:
+      - "5432:5432"
+
+volumes:
+  jojo-wango-data: {}
