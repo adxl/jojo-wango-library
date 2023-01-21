@@ -4,11 +4,11 @@ La bibliothèque de Jojo Wango
 
 ## Prérequis
 
-- `python>=3.10`  
-- `poetry>=1.1.10`  
+- `python>=3.10`
+- `poetry>=1.1.10`
 
 Pour installer `poetry` (OSX) :  
-`$ curl -sSL https://install.python-poetry.org | python3 -`  
+`$ curl -sSL https://install.python-poetry.org | python3 -`
 
 Si ça ne fonctionne pas : [Installation](https://python-poetry.org/docs/)
 
@@ -18,6 +18,8 @@ Si ça ne fonctionne pas : [Installation](https://python-poetry.org/docs/)
 2 - installer les dependances : `$ poetry install`  
 3 - lancer la BDD : `docker-compose up -d`
 4 - activer l'environnement : `$ source .venv/bin/activate`  
+5 - lancer le serveur : `$ python3 manage.py runserver`
+6 - lancer les tests : `$ python3 manage.py test`
 
 ## Django manager
 
