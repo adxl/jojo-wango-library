@@ -19,4 +19,4 @@ createMigration:
 migrate:
 	python3 manage.py migrate
 
-turboStart: start pythonStart
+turbostart: start pythonStart
