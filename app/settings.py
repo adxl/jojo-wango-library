@@ -59,6 +59,7 @@ MIDDLEWARE = [
 # URLS
 ROOT_URLCONF = 'app.urls'
 LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'index'
 
 TEMPLATES : List[Dict[str , Any]] = [
     {
