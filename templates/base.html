@@ -14,10 +14,10 @@
     <title>Accueil</title>
   </head>
 
-  <header>{% extends "components/navbar/navbar.html" %}</header>
+  <header>{% include "components/navbar/navbar.html" %}</header>
   <body>
     <br />
-    <main role="main" class="container">
+    <main role="main">
       <div>{% block content %} {% endblock %}</div>
     </main>
     <script src="https://cdn.tailwindcss.com"></script>
