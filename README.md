@@ -19,7 +19,6 @@ Si ça ne fonctionne pas : [Installation](https://python-poetry.org/docs/)
 3 - lancer la BDD : `docker-compose up -d`
 4 - activer l'environnement : `$ source .venv/bin/activate`  
 5 - lancer le serveur : `$ python3 manage.py runserver`
-6 - lancer les tests : `$ python3 manage.py test`
 
 ## Django manager
 
