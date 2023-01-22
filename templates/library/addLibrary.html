@@ -1,0 +1,7 @@
+{% extends "base.html" %} {% block content %}
+<h1>Page de formulaire d'add library</h1>
+<form action="/your-name/" method="post">
+  {% csrf_token %} {{ form }}
+  <input type="submit" value="Submit" />
+</form>
+{% endblock %}
