@@ -23,5 +23,6 @@ urlpatterns = [
     path('' , index , name='index'),
     path("admin/", admin.site.urls),
     path('' , include('users.urls')),
+    path('' , include('libraries.urls')),
     
 ]
