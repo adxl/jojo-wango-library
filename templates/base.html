@@ -18,7 +18,11 @@
   <body>
     <br />
     <main role="main">
-      <div>{% block content %} {% endblock %}</div>
+      <div>
+        {% if messages %} {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %} {% endif%}{% block content %} {% endblock %}
+      </div>
     </main>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.2/flowbite.min.js"></script>
