@@ -4,7 +4,7 @@ from libraries.views import add_library, index
 
 urlpatterns = [
     
-    path('library/' , index , name='index'),
-    path('library/add/' , add_library , name='index'),
+    path('library/' , index , name='library'),
+    path('library/add/' , add_library , name='library_add'),
     
 ]
