@@ -1,8 +1,12 @@
 from django.contrib import admin
 
-from .models import Library, LibraryHasBook
+from libraries.models import Library, LibraryHasBook
 
-admin.site.register(Library)
-admin.site.register(LibraryHasBook)
 
-# Register your models here.
+@admin.register(Library)
+class LibraryAdmin(admin.ModelAdmin):
+    list_display = [f.name for f in Library._meta.local_fields]
+
+@admin.register(LibraryHasBook)
+class LibraryAdmin(admin.ModelAdmin):
+    list_display = [f.name for f in LibraryHasBook._meta.local_fields]

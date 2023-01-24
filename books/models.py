@@ -8,6 +8,7 @@ class Genre(models.Model):
     name = models.CharField(max_length=30)
 
 
+
 class Book(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     title = models.CharField(max_length=64)
@@ -16,3 +17,5 @@ class Book(models.Model):
     cover = models.CharField(max_length=200)
     collection = models.CharField(max_length=64)
     genres = models.ManyToManyField(Genre)
+
+

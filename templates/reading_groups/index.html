@@ -1,0 +1,34 @@
+{% extends "base.html" %} {% block content %}
+<h1 class="text-3xl mb-5" >Séances de lecture:</h1>
+{% if reading_groups_list %}
+    <ul>
+    {% for group in reading_groups_list %}
+      <li>
+        <div class="flex items-center">
+          <span>Début : {{ group.start_at }}</span>
+          <span class="mx-5">➡</span>
+          <span>Fin : {{ group.end_at }}</span>
+        </div>
+{% if group.id not in user_reading_groups %}
+        <form action="/reading-groups/join/"  method="post" >
+          {% csrf_token %} 
+          <input name="group" hidden value="{{group.id}}" >
+          <button type="submit"   
+            class="block mt-5 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none"
+            >Rejoindre</button>
+        </form>  
+{% else %}
+          <button  disabled
+            class="block mt-5 text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none"
+            >Déjà rejoint</button>
+
+{% endif %}
+      </li>
+      <hr/>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Aucune séance en cours</p>
+{% endif %}
+
+{% endblock %}

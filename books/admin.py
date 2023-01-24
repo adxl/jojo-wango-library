@@ -1,8 +1,8 @@
 from django.contrib import admin
+from books.models import Genre
 
-from .models import Book, Genre
+@admin.register(Genre)
+class GenreAdmin(admin.ModelAdmin):
+    list_display = [f.name for f in Genre._meta.local_fields]
 
-admin.site.register(Book)
-admin.site.register(Genre)
 
-# Register your models here.
