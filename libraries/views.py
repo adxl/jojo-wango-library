@@ -4,7 +4,6 @@ from .forms import NameForm
 
 
 def index(request):
-
     return render(request, '../templates/libraries/index.html')
 
 
