@@ -1,0 +1,18 @@
+{% extends "base.html" %} {% block content %}
+<h1 class="text-3xl mb-5" >Genres:</h1>
+{% if genres %}
+    <ul>
+    {% for genre in genres %}
+      <li>
+        <div class="flex flex-col">
+          <span>Intitulé : {{ genre.name }}</span>
+        </div>
+      </li>
+      <hr/>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Aucun genre actuellement</p>
+{% endif %}
+
+{% endblock %}
