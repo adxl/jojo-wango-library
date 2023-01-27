@@ -25,6 +25,7 @@ reportMissingImports = true
 reportMissingTypeStubs = false
 reportUnknownMemberType=false
 reportUnknownArgumentType=false
+reportUnknownVariableType=false
 reportUntypedFunctionDecorator=false
 reportGeneralTypeIssues=false
 reportMissingParameterType=true

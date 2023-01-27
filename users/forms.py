@@ -9,14 +9,13 @@ class UserRegisterForm(UserCreationForm):
     inputAttr = "bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
     selectAttr = "bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
     
-    first_name = forms.CharField(required=True, label='First Name')
-    last_name = forms.CharField(required=True, label='Last Name')
-    email = forms.EmailField(required=True, label='Email Address')
-    password1 = forms.CharField(required=True, label='Password', widget=forms.PasswordInput)
-    password2 = forms.CharField(required=True, label='Confirm Password', widget=forms.PasswordInput)
-    username = forms.CharField(required=True, label='Username')
-    role = forms.ChoiceField(choices=[('no', 'No'), ('yes', 'Yes')], label='Are you a librairy?')
-    
+    first_name = forms.CharField(required=True, label='Prénom')
+    last_name = forms.CharField(required=True, label='Nom')
+    email = forms.EmailField(required=True, label='Email')
+    password1 = forms.CharField(required=True, label='Mot de passe', widget=forms.PasswordInput)
+    password2 = forms.CharField(required=True, label='Confirmation', widget=forms.PasswordInput)
+    username = forms.CharField(required=True, label="Nom d'utilisateur")
+    role = forms.ChoiceField(choices=[('READER', 'Lecteur'), ('LIBRARIAN', 'Libraire')], label='Vous êtes ?')
     
     first_name.widget.attrs.update({'class': inputAttr})
     last_name.widget.attrs.update({'class': inputAttr})
@@ -25,7 +24,6 @@ class UserRegisterForm(UserCreationForm):
     password2.widget.attrs.update({'class': inputAttr})
     username.widget.attrs.update({'class': inputAttr})
     role.widget.attrs.update({'class': selectAttr})
-    
     
     class Meta(UserCreationForm.Meta):
         model = User
