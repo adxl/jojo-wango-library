@@ -14,7 +14,15 @@
       >
     </a>
     {% if user.is_authenticated %}
-        <p>Connected as {{ user.username }}</p>
+
+        {% if user.profile.role == 'READER'  %}
+        <p>Connected as {{ user.username }} -> role:  {{user.profile.role}}</p>
+        
+        {% elif user.profile.role == 'LIBRARIAN' %}
+        <p>Connected as {{ user.username }} -> role:  {{user.profile.role}}</p>
+        
+        {% endif %}
+        
         <a href="{% url 'logout' %}">
             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                 Logout

@@ -28,7 +28,10 @@ def register(request):
 
             messages.success(request, f"Account created for {username}!")
 
-            return redirect("login")
+            if role == "LIBRARIAN":
+                return redirect("library")
+            else:
+                return redirect("login")
     else:
         form = UserRegisterForm()
 
