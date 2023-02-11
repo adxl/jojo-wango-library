@@ -15,26 +15,18 @@
   </head>
 
   <header>
-    {% if  user.is_authenticated and user.profile.role == 'READER' %}
-      {% comment %} rien {% endcomment %}
-    {% else %}
-      {% include "components/navbar/navbar.html" %} 
-    {% endif %}
-      
+    {% include "components/navbar/navbar.html" %} 
   </header>
   <body>
-    <br />
-    <main role="main">
-      <div>
+    <main class="h-screen" >
         {% if messages %} {% for message in messages %}
-
         <div
           id="toast-bottom-right"
-          class="absolute flex items-center w-full max-w-xs p-4 space-x-4 text-gray-500 bg-white divide-x divide-gray-200 rounded-lg shadow bottom-5 left-5 dark:text-gray-400 dark:divide-gray-700 space-x dark:bg-gray-800"
+          class="absolute flex items-center w-full max-w-xs p-4 space-x-4 divide-x rounded-lg shadow bottom-5 left-5 divide-gray-700 space-x bg-gray-800"
           role="alert"
         >
           <div
-            class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-blue-500 bg-blue-100 rounded-lg dark:bg-blue-800 dark:text-blue-200"
+            class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 rounded-lg bg-blue-800 text-blue-200"
           >
             <svg
               aria-hidden="true"
@@ -54,7 +46,7 @@
           <div class="ml-3 text-sm font-normal">{{ message }}</div>
           <button
             type="button"
-            class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
+            class="ml-auto -mx-1.5 -my-1.5 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 inline-flex h-8 w-8 text-gray-500 hover:text-white bg-gray-800 hover:bg-gray-700"
             data-dismiss-target="#toast-default"
             aria-label="Close"
           >
@@ -75,7 +67,6 @@
           </button>
         </div>
         {% endfor %} {% endif%}{% block content %} {% endblock %}
-      </div>
     </main>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.2/flowbite.min.js"></script>
