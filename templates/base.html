@@ -14,7 +14,14 @@
     <title>Accueil</title>
   </head>
 
-  <header>{% include "components/navbar/navbar.html" %}</header>
+  <header>
+    {% if  user.is_authenticated and user.profile.role == 'READER' %}
+      {% comment %} rien {% endcomment %}
+    {% else %}
+      {% include "components/navbar/navbar.html" %} 
+    {% endif %}
+      
+  </header>
   <body>
     <br />
     <main role="main">

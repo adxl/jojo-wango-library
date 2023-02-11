@@ -6,11 +6,13 @@ Le but de ce projet est de créer un site de location/pret de livres avec comme 
 - recherche de livre et de libraire le proposant
 - sélection de libraires par zone géographique,
 - création/planification des groupes de lectures et adhésion
+
 - backoffice pour les libraires :
 - - ajout de livres
 - - interface de gestion des emprunts
 - - listing des retards de retour de livres
 - - creation de groupes de lectures
+
 - page d'accueil des patients :
 - - rappel des prochains groupes de lectures
 - - rappel des livres à rendre
