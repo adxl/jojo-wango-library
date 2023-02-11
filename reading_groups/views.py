@@ -7,17 +7,28 @@ from reading_groups.models import ReadingGroup, ReadingGroupHasUser
 
 
 def index(request):
-    user_reading_groups: list[
-        ReadingGroupHasUser
-    ] = ReadingGroupHasUser.objects.all().filter(user=request.user.id)
-    reading_groups_list: list[ReadingGroup] = ReadingGroup.objects.filter(
-        end_at__gt=timezone.now()
-    ).order_by("-start_at")
-    context: dict[str, any] = {
-        "reading_groups_list": reading_groups_list,
-        "user_reading_groups": [g.group.id for g in user_reading_groups],
-    }
-    return render(request, "reading_groups/index.html", context)
+
+    if request.user.profile.role == "LIBRARIAN":
+        reading_groups_list: list[ReadingGroup] = ReadingGroup.objects.filter(
+            end_at__gt=timezone.now()
+        ).order_by("-start_at")
+        context: dict[str, any] = {
+            "reading_groups_list": reading_groups_list,
+        }
+        return render(request, "reading_groups/index.html", context)
+
+    else:
+        user_reading_groups = ReadingGroupHasUser.objects.all().filter(
+            user=request.user.id
+        )
+        reading_groups_list: list[ReadingGroup] = ReadingGroup.objects.filter(
+            end_at__gt=timezone.now()
+        ).order_by("-start_at")
+        context: dict[str, any] = {
+            "reading_groups_list": reading_groups_list,
+            "user_reading_groups": [g.group.id for g in user_reading_groups],
+        }
+        return render(request, "reading_groups/index.html", context)
 
 
 def join_reading_group(request):

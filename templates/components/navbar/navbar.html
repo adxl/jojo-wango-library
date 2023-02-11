@@ -1,37 +1,39 @@
 <nav
-  class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900"
+  class="border-gray-200 px-2 sm:px-4 py-2.5 bg-gray-900"
 >
   <div class="container flex flex-wrap items-center justify-between mx-auto">
     <a href="{% url 'index' %}" class="flex items-center">
       <img
         src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/7c125a54-0a1e-46f2-9da3-39e0b8bba609/dasng8u-a3e9916e-8321-40b8-b42e-40b93f7ea021.png"
         class="h-6 mr-3 sm:h-9"
-        alt="Flowbite Logo"
+        alt="Logo"
       />
       <span
-        class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"
+        class="self-center text-xl font-semibold whitespace-nowrap text-white"
         >Jojo Wango Library</span
       >
     </a>
     {% if user.is_authenticated %}
+      <div class="flex md:order-2 items-center">
 
-        {% if user.profile.role == 'READER'  %}
-        <p>Connected as {{ user.username }} -> role:  {{user.profile.role}}</p>
-        {% elif user.profile.role == 'LIBRARIAN' %}
-        
+
+        <p class="text-white mr-3">{{ user.first_name }} {{ user.last_name }} [{{user.profile.role}}]</p>
+        {% if user.profile.role == "LIBRARIAN"%}
+        <a href="{% url 'library' %}">
+          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-3">
+            Backoffice
+          </button>
+        </a>
         {% endif %}
-        
-        <div class="flex md:order-2">
-          <a href="{% url 'logout' %}">
-              <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                  Logout
-              </button>
-          </a>
+        <a href="{% url 'logout' %}">
+          <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+              Logout
+          </button>
+        </a>
       </div>
-        
     {% else %}
-        {% include "components/navbar/disconnectedNavbar.html" %}
-      {% endif %}
+      {% include "components/navbar/disconnectedNavbar.html" %}
+    {% endif %}
     </div>
   </div>
 </nav>

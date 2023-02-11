@@ -2,8 +2,15 @@
 
 {% include "components/sidebar/librarianSidebar.html" %}
 
-<div class="p-4 sm:ml-64">
-  <p>pouet</p>
+<div class="flex justify-center align-center p-4 sm:ml-64 bg-gray-900 h-screen text-white">
+  <p class="text-white">
+  Bienvenue dans votre
+  {% if user.profile.role == "READER" %}
+    espace lecteur chez Jojo Wango Library
+  {% elif user.profile.role == "LIBRARIAN" %}
+    tableau de board de libraire
+  {% endif%}
+  </p>
 </div>
 
 {% endblock %}
