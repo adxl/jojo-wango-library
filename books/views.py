@@ -2,10 +2,13 @@ from django.shortcuts import redirect, render
 
 from books.forms import BookForm, GenreForm
 from books.models import Book, Genre
-
+from forums.models import create_forum, get_forum_by_id
 
 def index_books(request):
     books: list[Book] = Book.objects.order_by("title")
+    # get forum id for each book
+    for book in books:
+        book.forum_id = get_forum_by_id(book.id)
     context: dict[str, any] = {
         "books": books,
     }
@@ -25,6 +28,7 @@ def add_book(request):
         form = BookForm(request.POST)
         if form.is_valid():
             form.save()
+            create_forum(form.instance.id)
             return redirect("/books/")
 
     else:

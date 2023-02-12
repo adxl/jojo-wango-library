@@ -2,6 +2,8 @@ import uuid
 
 from django.db import models
 
+# from forums.models import Forum
+
 
 class Genre(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)

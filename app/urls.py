@@ -26,5 +26,5 @@ urlpatterns = [
     path('' , include('libraries.urls')),
     path('' , include('reading_groups.urls')),
     path('' , include('books.urls')),
-    
+    path('' , include('forums.urls')),
 ]
