@@ -1,14 +1,19 @@
 from django.shortcuts import redirect, render
+import logging
 
 from books.forms import BookForm, GenreForm
 from books.models import Book, Genre
 from forums.models import create_forum, get_forum_by_id
+
+logger = logging.getLogger(__name__)
 
 def index_books(request):
     books: list[Book] = Book.objects.order_by("title")
     # get forum id for each book
     for book in books:
         book.forum_id = get_forum_by_id(book.id)
+
+    logging.warning(books)
     context: dict[str, any] = {
         "books": books,
     }

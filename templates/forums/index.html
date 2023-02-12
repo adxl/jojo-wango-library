@@ -1,8 +1,8 @@
 {% extends "base.html" %} {% block content %}
 
-<div class="w-full p-4 text-center bg-white shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-    <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">{{ book.title }}</h5>
-    <div class="items-center justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
+<div class="w-full p-4 text-center shadow sm:p-8 bg-gray-800 border-gray-700">
+    <h5 class="mb-2 text-3xl font-bold text-white">Furom du livre : {{ book.title }}</h5>
+    <div class="items-center justify-center space-y-4 text-white sm:flex sm:space-y-0 sm:space-x-4">
         <span>Auteur : {{ book.author }}</span>
         <span>Editeur : {{ book.editor }}</span>
         <span>Collection : {{ book.collection }}</span>
@@ -10,7 +10,7 @@
     <div class="items-center justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
         <div class="flex flex-wrap gap-1 mt-4 items-center">
             {% for genre in book.genres.all %}
-                <span class="text-sm bg-gray-600 rounded p-1">{{ genre.name }}</span>
+                <span class="text-sm bg-gray-600 text-white rounded p-1">{{ genre.name }}</span>
             {% endfor %}
         </div>
     </div>
@@ -18,22 +18,21 @@
 
 <section class="bg-gray-900 h-full text-white">
 
-    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-            <tbody>
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg border-gray-700">
+        <div class="m-4 w-full text-sm text-left text-white text-gray-400">
                 {% for message in messages_forum %}
-                <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                    <td class="px-6 py-4">
+                <div class="p-1 m-4 border-b bg-gray-700 border-gray-700">
+                    <div class="px-6 py-4 text-white">
                         {{ message.content }}
                         <div class="flex flex-wrap gap-1 items-center">
                             <span class="text-sm bg-gray-600 rounded p-1">{{ message.created_at }}</span>
                           </div>
-                    </td>
-                </tr>
+                    </div>
+                </div>
                 {% endfor %}
-            </tbody>
-        </table>
+        </tabdivle>
     </div> 
+    Ajouter un message :
     <form action="{{forum_channel.id}}" method="post">
         {% csrf_token %} 
       

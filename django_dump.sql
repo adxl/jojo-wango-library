@@ -55,6 +55,16 @@ INSERT INTO public.books_genre VALUES ('84da36b0-6b37-4a53-a766-c002a3fb2db7', '
 INSERT INTO public.books_genre VALUES ('544b7b39-2ee3-4d6d-b2f8-ee506e318cdd', 'Thriller');
 INSERT INTO public.books_genre VALUES ('335fce11-4c5c-4286-b3dc-784c6edcb287', 'Roman');
 
+INSERT INTO public.forums_forum VALUES ('35f12f47-2554-431f-ab76-01b71d0b5c11', 'c912d765-5aa4-4ee3-9fc3-1899b623a83a');
+INSERT INTO public.forums_forum VALUES ('ea2d5481-5840-4c34-9127-ed6614a9661e', 'a7450510-5113-4f61-acca-ab923f5e86aa');
+INSERT INTO public.forums_forum VALUES ('6f00ec75-b41f-4c05-8088-2b6073ec3298', 'ce6adbb7-236d-459f-8aae-b567e4faf8d2');
+INSERT INTO public.forums_forum VALUES ('3441a7c6-d365-48bd-80ff-f1f2e54d162a', '50e77c3b-c88b-4472-9c5b-c7d5b41a9196');
+INSERT INTO public.forums_forum VALUES ('628898f5-893d-47bf-a098-8dd0dbcdeb9c', 'a51f6443-c52c-458f-9b89-28452dd4ea06');
+INSERT INTO public.forums_forum VALUES ('e7064fba-683f-415c-95cb-584a65a76a0d', 'd057e093-5d62-4a91-8014-f5cdc2befc63');
+INSERT INTO public.forums_forum VALUES ('d7980899-44f9-42f0-b016-ff87ba997e58', '905ce793-175b-4d87-b43c-8208d2d52fae');
+INSERT INTO public.forums_forum VALUES ('cc982506-2dd4-4f0d-8fcc-b0451094eeff', 'd305f06b-e691-44cc-887d-79e58a18c691');
+INSERT INTO public.forums_forum VALUES ('84ab4f82-1832-49c9-bd71-aae4666b73dd', '6d980be3-dd2c-41d0-b08f-791d8316a5d0');
+
 INSERT INTO public.books_book_genres VALUES (1, '50e77c3b-c88b-4472-9c5b-c7d5b41a9196', '544b7b39-2ee3-4d6d-b2f8-ee506e318cdd');
 INSERT INTO public.books_book_genres VALUES (2, '905ce793-175b-4d87-b43c-8208d2d52fae', '544b7b39-2ee3-4d6d-b2f8-ee506e318cdd');
 INSERT INTO public.books_book_genres VALUES (3, 'a51f6443-c52c-458f-9b89-28452dd4ea06', '84c640f8-d02f-443d-98ec-2faf79aa565c');

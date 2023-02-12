@@ -4,7 +4,7 @@
   style="top: 60px" 
   aria-label="Sidebar"
 >
-  <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+  <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 bg-gray-800 text-white">
     <p class="text-white text-xl mb-5">
       {% if user.profile.role == 'READER' %}
         Dashboard Lecteur
@@ -15,7 +15,7 @@
     <ul class="space-y-2">
       <li>
         <a href="{% url 'library' %}"
-          class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+          class="flex items-center p-2 text-base font-normal rounded-lg text-white hover:bg-gray-100 dark:hover:bg-gray-700"
         >
           <svg
             aria-hidden="true"
@@ -33,11 +33,11 @@
       </li>
       <li>
         <a href="{% url 'index_books' %}"
-          class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+          class="flex items-center p-2 text-base font-normal text-white rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
         >
           
         <svg  xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"
-            class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+            class="flex-shrink-0 w-6 h-6 transition duration-75 text-white group-hover:text-gray-900 dark:group-hover:text-white"
             >
             <defs>
                 <path d="M0 0h24v24H0Z" id="a"></path>
@@ -60,7 +60,7 @@
 
       <li>
         <a href="{% url 'reading_groups' %}"
-          class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+          class="flex items-center p-2 text-base font-normal text-white rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
         >
             <svg  viewBox="0 0 24 24"
                 class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
@@ -75,7 +75,7 @@
       <li>
         <a
           href="#"
-          class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+          class="flex items-center p-2 text-base font-normal text-white rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
         >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
             class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
