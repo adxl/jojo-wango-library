@@ -23,7 +23,12 @@ Si ça ne fonctionne pas : [Installation](https://python-poetry.org/docs/)
   python3 manage.py makemigrations`  
   python3 manage.py migrate`
   ```
-6 - lancer le serveur : `$ python3 manage.py runserver`
+6 - Importer les données: 
+```bash 
+docker container exec -i jojo_wango_db psql -U root -d jojo_wango_db < django_dump.sql
+```  
+NOTE: en cas de fausse manipulation, il faut drop la DB et relancer les migration et le dump  
+7 - lancer le serveur : `$ python3 manage.py runserver`
 
 ## Django manager
 
